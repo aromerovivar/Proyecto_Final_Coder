@@ -1,0 +1,35 @@
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'AppWeb/css/StyleBlogs.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block titlo %}
+¿Buscas algun Blog?
+
+{% endblock %}
+
+{% block Descp %}
+
+{% endblock %}
+{% block Descp1 %}
+{% for blog  in blogs %}
+
+    <p>
+        Blog: <br>
+        {{blog.titulo}} <br>
+        Descp <br>
+        {{blog.descripcion}} <br>
+        <a class="btn btn-primary btn-xl" href="{% url 'BlogDetalle' blog.id %}">Leer bitacora</a> 
+    </p>
+
+
+{% endfor %}
+{% endblock %}
+
+{% block botonregi %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block titlo %}
+Vas a poner una foto facherita?
+{% endblock %}
+
+{% block Descp %}
+{% endblock %}
+
+{% block Descp1 %}
+   Elige una buena foto ;)
+{% endblock %}
+
+{% block Descp2 %}
+
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+    <table>
+    {{formulario.as_p}}
+    </table>
+    <br></br>
+
+    <button type="submit">Cambiar foto.</button>
+</form>                   
+{% endblock %}
+
+{% block Descp3 %}              
+{% endblock %}

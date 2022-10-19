@@ -1,0 +1,30 @@
+
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'AppWeb/css/StyleBlogs.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block titlo %}
+¿Buscas algun Blog?
+{% endblock %}
+
+{% block Descp %}
+<form action="/AppWeb/resultados/" method="GET">
+
+    <input class="text-muted mb-5" type="text" name="titulo" id="titulo"> <br> <br> <br>
+
+    <input class="btn btn-primary btn-xl" type="submit" value="Buscar">
+
+</form>
+{% endblock %}
+
+{% block Descp1 %}
+Comparte tu experiencia en CoderHouse.                            
+{% endblock %}
+{% block botonvermas %}
+
+{% endblock %}

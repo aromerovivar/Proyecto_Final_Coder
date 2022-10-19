@@ -1,0 +1,26 @@
+
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'AppWeb/css/buscarblogs.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block titlo %}
+{% endblock %}
+
+{% block Descp %}
+    <p>{{blog.titulo}}</p>
+    <p>{{blog.descripcion}}</p>
+    <p>{{blog.cuerpo}}</p>
+    <img src="{% media {{blog.imagen}}" alt="nada">
+    {% endblock %}
+    
+{% block Descp1 %}
+
+{% endblock %}
+{% block botonvermas %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block titlo %}
+Bienvenido a Registrate!
+{% endblock %}
+
+{% block Descp %}
+{% endblock %}
+
+{% block Descp1 %}
+Iniciemos el registro:              
+{% endblock %}
+
+{% block Descp2 %}
+<form action="" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{formu.as_table}}
+
+    </table>
+    <br></br>
+    <input type="submit" value = "Crear usuario">
+</form>  
+{% endblock %}
+
+{% block Descp3 %}              
+{% endblock %}

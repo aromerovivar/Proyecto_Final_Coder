@@ -1,0 +1,37 @@
+#13/10 agregado
+
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block titlo %}
+Bienvenido a Registrate!
+{% endblock %}
+
+{% block Descp %}
+{% endblock %}
+
+{% block Descp1 %}
+   
+{% endblock %}
+
+{% block Descp2 %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+    {{formulario.as_p}}
+    </table>
+    <br></br>
+
+    <button class="btn btn-light btn-xl type="submit"> iniciar sesión</button>
+</form>                   
+{% endblock %}
+
+{% block Descp3 %}              
+{% endblock %}
+
+{% block botonregi %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block titlo %}
+Editor de Usuario: {{usuario}}
+{{mensaje}}
+{% endblock %}
+
+{% block Descp %}
+{% endblock %}
+
+{% block Descp1 %}
+{% endblock %}
+
+{% block Descp2 %}
+{{usuario}}
+<form action="" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{formulario.as_table}}
+
+    </table>
+    <br></br>
+    <input type="submit" value = "Guardar usuario">
+</form>  
+{% endblock %}
+
+{% block Descp3 %}
+
+
+
+{% endblock %}

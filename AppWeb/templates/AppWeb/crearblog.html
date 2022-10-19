@@ -1,0 +1,44 @@
+{% extends "AppWeb/padre.html" %}
+
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'AppWeb/css/StyleBlogs.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block titlo %}
+¿Listo para compartir tu experiencia?
+{% endblock %}
+
+{% block Descp %}
+{% endblock %}
+
+{% block Descp1 %}
+Comparte tu experiencia en CoderHouse.                            
+{% endblock %}
+
+{% block Descp2 %}
+<div class="form-floating mb-3">
+    <form class="form-floating mb-3" action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+
+        <table>
+
+            <div>
+            {{formulario.as_table}}
+            </div>
+
+        </table>
+        <br>
+
+        <input class="btn btn-primary btn-xl" type="submit" value = "Subir Blog">
+    </form>
+</div>
+{% endblock %}
+
+{% block Descp3 %}
+{% endblock %}
+
+{% block botonvermas %}
+
+{% endblock %}
