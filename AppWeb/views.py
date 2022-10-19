@@ -101,7 +101,7 @@ def login_request(request):
 
     return render(request, "AppWeb/login.html", {"formulario":form})
 
-
+@login_required
 def editaruser(request):
 
     usuario = request.user
@@ -155,18 +155,14 @@ class listablogs(ListView):
 
 class detailblogs(DetailView):
     model = blog
-        
-class CrearBlog(CreateView):
-    model = blog
-    success_url = "AppWeb/blog/list"
      
 
 class actualizarBlog(UpdateView):
     model = blog
-    success_url = "AppWeb/blog/list"
-    fields = ["titulo", "cuerpo"]
+    success_url = "/AppWeb/blog/list"
+    fields = ["titulo","descripcion", "cuerpo","imagen"]
 
 class borrarBlog(DeleteView):
     model = blog
-    success_url = "AppWeb/blog/list"
-    fields = ["titulo", "cuerpo"]
+    success_url = "/AppWeb/blog/list"
+    fields = ["titulo","descripcion", "cuerpo","imagen"]

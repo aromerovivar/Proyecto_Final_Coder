@@ -1,4 +1,3 @@
-
 {% extends "AppWeb/padre.html" %}
 
 
@@ -12,12 +11,15 @@
 {% endblock %}
 
 {% block Descp %}
+<form action="" method="POST">{% csrf_token %}
 
-    <p style="color:#fff" >{{blog.titulo}}</p>
-    <p style="color:#fff" >{{blog.descripcion}}</p>
-    <p style="color:#fff"  >{{blog.cuerpo}}</p>
-    <img src="{{blog.imagen.url}}" style="max-width: 500px;" alt="nada">
-    {% endblock %}
+    <h1 style="color:#fff"  >{{blog.titulo}}</h1> <br> <br>
+    <p style="color:#fff" >¿Seguro que queres elimar esta bitacota?</p>
+
+
+    <input class="btn btn-primary btn-xl" type="submit" value = "Eliminar">
+</form>
+{% endblock %}
     
 {% block Descp1 %}
 

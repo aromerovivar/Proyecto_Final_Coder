@@ -23,4 +23,6 @@ urlpatterns = [
 
     path('blog/list/', listablogs.as_view(),name="BlogLeer"),
     path('blog/<int:pk>/', detailblogs.as_view(),name="BlogDetalle"),
+    path('blog/editar/<int:pk>', actualizarBlog.as_view(),name="Blogeditar"),
+    path('blog/eliminar/<int:pk>', borrarBlog.as_view(),name="eliminarBlog"),
 ]

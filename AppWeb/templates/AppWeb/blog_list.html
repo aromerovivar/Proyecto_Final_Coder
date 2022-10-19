@@ -44,7 +44,7 @@ background-color: #552E60;
                         <li class="nav-item"><a class="nav-link" href="{% url 'CrearBlogs' %}">Crear Bitacora</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Buscarblogs' %}">Buscar Bitacora</a></li>
                         <li class="nav-item" STYLE="text-transform:uppercase"><a class="nav-link" href="{% url 'AgregarAvatar' %}">{{user.username}}</a></li>
-                        {% with user.avatar_set.first as miAvatar %}
+                        {% with user.avatar_set.last as miAvatar %}
                         {% if miAvatar %}
                         <img src="{{miAvatar.imagen.url}}" alt="No encontró la imagen" style="max-width: 20px;">
                         {% endif %}
@@ -85,9 +85,11 @@ background-color: #552E60;
         <br><br><br>
     {% for blog in object_list %}
     
-        <p>Titulo: {{blog.titulo}}</p>
-        <p>Descripción: {{blog.cuerpo}}</p>
-        <a class="btn btn-primary btn-xl" href="{% url 'BlogDetalle' blog.id %}">Leer bitacora</a> 
+        <p style="color:#fff"  >Titulo: {{blog.titulo}}</p>
+        <p style="color:#fff"  >Descripción: {{blog.descripcion}}</p>
+        <a class="btn btn-primary btn-xl" href="{% url 'BlogDetalle' blog.id %}">Leer bitacora</a>
+        <a class="btn btn-primary btn-xl" href="{% url 'Blogeditar' blog.id %}">Editar bitacora</a> <br> <br>
+        <a class="btn btn-primary btn-xl" href="{% url 'eliminarBlog' blog.id %}">Eliminar bitacora</a> 
         <br>
         <br>
         <br>
