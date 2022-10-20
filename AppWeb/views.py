@@ -48,7 +48,7 @@ def crearBlog(request):
             info2 = formu2.cleaned_data
             Blog = blog(titulo=info2["Titulo"],descripcion=info2["Descripcion"], cuerpo=info2["Cuerpo"], imagen=info2["imagen"])
             Blog.save()
-            return render(request,"AppWeb/BlogCreado.html",{"nombre":Blog.titulo,"descripcion":Blog.descripcion,"cuerpo":Blog.cuerpo,})
+            return render(request,"AppWeb/BlogCreado.html",{"titulo":Blog.titulo,"descripcion":Blog.descripcion,"cuerpo":Blog.cuerpo,})
             
     else:
         formu2 = blogFormulario()
@@ -159,10 +159,15 @@ class detailblogs(DetailView):
 
 class actualizarBlog(UpdateView):
     model = blog
-    success_url = "/AppWeb/blog/list"
+    success_url = "/AppWeb/pages/list"
     fields = ["titulo","descripcion", "cuerpo","imagen"]
 
 class borrarBlog(DeleteView):
     model = blog
-    success_url = "/AppWeb/blog/list"
+    success_url = "/AppWeb/pages/list"
     fields = ["titulo","descripcion", "cuerpo","imagen"]
+
+class borraruser(DeleteView):
+    model = Usuario
+    success_url = "/AppWeb/accounts/login"
+    fields = ["nombre","email","contra"]
